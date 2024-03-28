@@ -7,8 +7,9 @@ def move_files_based_on_txt(folder_path, txt_file_path):
         lines = reversed(file.readlines())#-----------------QUI---------------
 
     # regex per trovare le estensioni delle FOTO
-    # per aggiungerne altre |estensione dentro le tonde
-    regex = r"\.(jpg|jpeg|png)$"
+    
+    # modificato, se non funziona ripristinare
+    regex = r"\.(.{2,5})$"        # jpg|jpeg|png)$" 
     current_subfolder = None
     #per ogni riga del file di testo
     for line in lines:
