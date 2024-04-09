@@ -13,8 +13,11 @@ def move_files_based_on_txt(folder_path, txt_file_path):
     current_subfolder = None
     #per ogni riga del file di testo
     for line in lines:
-        #toglie spazi dalla stringa
+        # toglie spazi dalla stringa
         line = line.strip()
+        # rimuove i caratteri unicode dalla stringa
+        line = line.encode("ascii", "ignore")
+        line = line.decode()
 
         #se è una foto
         if re.search(regex,line): 
